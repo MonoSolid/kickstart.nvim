@@ -78,8 +78,6 @@ return {
         --  To jump back, press <C-t>.
         map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
-        -- WARN: This is not Goto Definition, this is Goto Declaration.
-        --  For example, in C this would take you to the header.
         map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
         -- Fuzzy find all the symbols in your current document.
@@ -193,18 +191,34 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    local vue_language_server_path = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+    local vue_plugin = {
+      name = '@vue/typescript-plugin',
+      location = vue_language_server_path,
+      languages = { 'vue' },
+      configNamespace = 'typescript',
+    }
     local servers = {
       -- clangd = {},
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-      --
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`ts_ls`) will work just fine
-      ts_ls = {},
+      vtsls = {
+        tsserver = {
+          globalPlugins = {
+            vue_plugin,
+          },
+        },
+        filetypes = {
+          'typescript',
+          'javascript',
+          'javascriptreact',
+          'typescriptreact',
+          'vue',
+        },
+      },
+      vue_ls = {},
       lua_ls = {
         -- cmd = { ... },
         -- filetypes = { ... },
@@ -220,7 +234,6 @@ return {
         },
       },
       csharp_ls = {},
-      vue_ls = {},
     }
 
     -- Ensure the servers and tools above are installed
