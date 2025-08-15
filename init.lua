@@ -31,7 +31,7 @@ require('lazy').setup({
   -- Autocompletion
   require 'block.plugins.saghen_blink',
   -- Colorscheme
-  require 'block.plugins.folke_tokyoNight',
+  require 'block.plugins.colorScheme',
   -- Highlight todo, notes, etc in comments
   require 'block.plugins.folke_todoComments',
   -- Mini collection
