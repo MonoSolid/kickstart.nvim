@@ -34,8 +34,8 @@ return { -- Autoformat
       -- You can use 'stop_after_first' to run the first available formatter from the list
       lua = { 'stylua' },
 
-      csharp = { 'csharpier' },
-      csproj = { 'csharpier' },
+      cs = { 'csharpier' },
+      xml = { 'csharpier' },
 
       html = { 'prettier' },
       json = { 'prettier' },
@@ -54,6 +54,13 @@ return { -- Autoformat
       less = { 'prettier' },
       yaml = { 'prettier' },
       graphql = { 'prettier' },
+    },
+    formatters = {
+      csharpier = {
+        command = 'csharpier',
+        args = { 'format', '--write-stdout' },
+        stdin = true,
+      },
     },
   },
 }
