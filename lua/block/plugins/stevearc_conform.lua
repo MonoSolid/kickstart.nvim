@@ -33,14 +33,27 @@ return { -- Autoformat
       -- python = { "isort", "black" },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       lua = { 'stylua' },
+
+      csharp = { 'csharpier' },
+      csproj = { 'csharpier' },
+
+      html = { 'prettier' },
+      json = { 'prettier' },
+      markdown = { 'prettier' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },
-      cs = { 'prettier' },
-      csproj = { 'prettier' },
-      json = { 'prettier' },
-      xml = { 'prettier' },
-      html = { 'prettier' },
+      css = { 'prettier' },
+      scss = { 'prettier' },
       vue = { 'prettier' },
+      angular = { 'prettier' },
+
+      handlebars = { 'prettier' },
+      jsx = { 'prettier' },
+      tsx = { 'prettier' },
+      flow = { 'prettier' },
+      less = { 'prettier' },
+      yaml = { 'prettier' },
+      graphql = { 'prettier' },
     },
   },
 }

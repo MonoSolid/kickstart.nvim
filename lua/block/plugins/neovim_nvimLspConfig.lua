@@ -234,7 +234,7 @@ return {
     --    :Mason
     -- You can press `g?` for help in this menu.
 
-    local ensure_tools = { 'stylua', 'prettier' }
+    local ensure_tools = { 'stylua', 'prettier', 'csharpier' }
     require('mason-tool-installer').setup {
       ensure_installed = ensure_tools,
     }
