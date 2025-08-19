@@ -225,7 +225,7 @@ return {
           },
         },
       },
-      csharp_ls = {},
+      omnisharp = {},
     }
 
     -- Ensure the servers and tools above are installed
