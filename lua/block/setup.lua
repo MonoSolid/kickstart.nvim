@@ -80,6 +80,11 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Configure tabstop to always be 4 according to the recommendation described in :help tabstop
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = false;
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
