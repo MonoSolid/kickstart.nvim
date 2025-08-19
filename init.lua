@@ -48,6 +48,8 @@ require('lazy').setup({
   require 'block.plugins.thePrimeagen_harpoon',
   -- Copilot
   require 'block.plugins.github_copilot',
+  -- Lightbulb for code actions
+  require 'block.plugins.kosayoda_nvimLightBulb',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
