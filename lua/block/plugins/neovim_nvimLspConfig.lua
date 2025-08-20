@@ -247,8 +247,8 @@ return {
     }
 
     -- Make sure to set lsp configuration since this is not done via mason lsp or mason tool installer
-    for key, value in pairs(servers) do
-      vim.lsp.config(key, value)
+    for key, server in pairs(servers) do
+      vim.lsp.config(key, server)
     end
 
     local ensure_installed = vim.tbl_keys(servers or {})
