@@ -8,6 +8,7 @@ return {
     { 'mason-org/mason.nvim', opts = {} },
     'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'Hoffs/omnisharp-extended-lsp.nvim',
 
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = {} },
@@ -92,6 +93,12 @@ return {
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
         map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
+
+        -- Omnisharp Extended LSP
+        map('grod', require('omnisharp_extended').telescope_lsp_definition, '[G]oto [O]mnisharp [D]efinition (OmniSharp Extended)')
+        map('grot', require('omnisharp_extended').telescope_lsp_type_definition, '[G]oto [O]mnisharp [T]ype Definition (OmniSharp Extended)')
+        map('gror', require('omnisharp_extended').telescope_lsp_references, '[G]oto [O]mnisharp [R]eferences (OmniSharp Extended)')
+        map('groi', require('omnisharp_extended').telescope_lsp_implementation, '[G]oto [O]mnisharp [I]mplementation (OmniSharp Extended)')
 
         -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
         ---@param client vim.lsp.Client
