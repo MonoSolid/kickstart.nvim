@@ -53,6 +53,14 @@ return { -- Autoformat
         args = { 'format', '--write-stdout' },
         stdin = true,
       },
+      prettier = {
+        prepend_args = {
+          '--tab-width',
+          '4',
+          '--single-attribute-per-line',
+          'true',
+        },
+      },
     },
   },
 }
