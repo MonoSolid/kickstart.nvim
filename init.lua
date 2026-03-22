@@ -48,6 +48,7 @@ require('lazy').setup({
   require 'block.plugins.thePrimeagen_harpoon',
   -- Copilot
   require 'block.plugins.github_copilot',
+  require 'block.plugins.copilotC-Nvim_CopilotChat',
   -- Lightbulb for code actions
   require 'block.plugins.kosayoda_nvimLightBulb',
 }, {
