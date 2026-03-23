@@ -124,3 +124,5 @@ end
 ---@type vim.Option
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
+
+vim.g.clipboard = 'tmux'
